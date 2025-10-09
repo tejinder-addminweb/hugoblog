@@ -1,4 +1,4 @@
-baseURL = 'https://github.com/tejinder-addminweb/hugoblog.git'
+baseURL = 'https://tejinder-addminweb.github.io/hugoblog/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'anank'
