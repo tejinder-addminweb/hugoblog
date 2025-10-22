@@ -2,3 +2,8 @@ baseURL = 'https://tejinder-addminweb.github.io/hugoblog/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'anank'
+publishDir = 'public'
+
+[params]
+  theme_color = "#1a365d"
+  background_color = "#ffffff"
