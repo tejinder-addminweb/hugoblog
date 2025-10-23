@@ -1,5 +1,5 @@
 ---
-title: "5 Marketting Mistakes Keeping Your Videos Under 1K Views"
+title: 5 Marketting Mistakes Keeping Your Videos Under 1K Views
 date: 2025-10-22T04:40:23.114Z
 draft: false
 
