@@ -55,7 +55,9 @@
 
 {{/* Article-specific SEO */}}
 {{ if .IsPage }}
-<meta name="news_keywords" content="{{ delimit .Params.tags ", " }}" />
+{{ with .Params.tags }}
+<meta name="news_keywords" content="{{ delimit . ", " }}" />
+{{ end }}
 <meta property="article:section" content="{{ index .Params.categories 0 | default "Uncategorized" }}" />
 {{ end }}
 
