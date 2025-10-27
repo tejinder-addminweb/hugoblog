@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tejinder-addminweb.github.io/hugoblog/</loc>
-    <lastmod>2025-10-24T06:24:14+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://tejinder-addminweb.github.io/hugoblog/posts/is-a-2014-pathfinder-with-105k-miles-a-good-deal-for-my-son-1761287055024/</loc>
     <lastmod>2025-10-24T06:24:14+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://tejinder-addminweb.github.io/hugoblog/posts/</loc>
+    <lastmod>2025-10-24T06:24:14+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://tejinder-addminweb.github.io/hugoblog/</loc>
     <lastmod>2025-10-24T06:24:14+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

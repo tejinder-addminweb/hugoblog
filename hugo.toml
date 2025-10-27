@@ -1,6 +1,6 @@
 baseURL = 'https://tejinder-addminweb.github.io/hugoblog/'
 languageCode = 'en-us'
-title = ''
+title = 'blogs'
 theme = 'anank'
 publishDir = 'public'
 
