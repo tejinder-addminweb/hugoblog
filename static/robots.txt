@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow specific paths
+Disallow: /page/
+
+# Sitemap location
+Sitemap: https://tejinder-addminweb.github.io/hugoblog/sitemap.xml
+
+# Crawl-delay (optional, adjusts how frequently bots crawl)
+Crawl-delay: 1
+

@@ -7,3 +7,30 @@ publishDir = 'public'
 [params]
   theme_color = "#1a365d"
   background_color = "#ffffff"
+  description = "Latest insights on digital marketing, real estate, app development, and technology trends. Expert tips and strategies for entrepreneurs and businesses."
+  author = "Tejinder Addminweb"
+  keywords = ["digital marketing", "SEO", "real estate", "app development", "business tips", "entrepreneurship", "technology trends"]
+  
+  # Social media configuration
+  social_image = "/images/og-default.jpg"
+  
+  # SEO enhancements
+  enableGoogleAnalytics = false
+  googleAnalytics = ""
+  enableRobotsTxt = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Sitemap configuration
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+  
+# Google Analytics configuration
+[params.analytics]
+  google = ""
+  baidu = ""

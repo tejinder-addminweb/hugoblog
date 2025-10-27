@@ -1,0 +1,93 @@
+{{/* Enhanced SEO Meta Tags */}}
+
+{{/* Open Graph / Facebook / LinkedIn */}}
+{{ if .IsPage }}
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+{{ with .Params.featured_image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.social_image | absURL }}" />
+{{ end }}
+<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" />
+{{ if .Lastmod }}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}" />
+{{ end }}
+{{ with .Params.author }}
+<meta property="article:author" content="{{ . }}" />
+{{ end }}
+{{ with .Params.tags }}
+{{ range . }}
+<meta property="article:tag" content="{{ . }}" />
+{{ end }}
+{{ end }}
+{{ else }}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:image" content="{{ .Site.Params.social_image | absURL }}" />
+{{ end }}
+
+{{/* Twitter Card */}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ if .IsPage }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}" />
+{{ with .Params.featured_image }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{ else }}
+<meta name="twitter:image" content="{{ .Site.Params.social_image | absURL }}" />
+{{ end }}
+
+{{/* Additional SEO Meta Tags */}}
+{{ with .Site.Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}" />
+{{ end }}
+<meta name="author" content="{{ .Site.Params.author }}" />
+<meta name="copyright" content="{{ .Site.Title }}" />
+
+{{/* Article-specific SEO */}}
+{{ if .IsPage }}
+<meta name="news_keywords" content="{{ delimit .Params.tags ", " }}" />
+<meta property="article:section" content="{{ index .Params.categories 0 | default "Uncategorized" }}" />
+{{ end }}
+
+{{/* Schema.org Structured Data */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if .IsPage }}BlogPosting{{ else }}Blog{{ end }}",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
+  {{ if .Lastmod }}"dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",{{ end }}
+  {{ if .IsPage }}{{ with .Params.author }}"author": {
+    "@type": "Person",
+    "name": "{{ . }}"
+  },{{ end }}{{ end }}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  }{{ if .Params.featured_image }},
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ .Params.featured_image | absURL }}",
+    "width": 1200,
+    "height": 630
+  }{{ end }}
+}
+</script>
+
+{{/* Preconnect to external domains for performance */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
